@@ -4,10 +4,39 @@
          xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
          version="4.0">
     <welcome-file-list>
-        <welcome-file>views/start/pict.html</welcome-file>
-        <welcome-file>views/start/pict.htm</welcome-file>
-        <welcome-file>views/start/pict.jsp</welcome-file>
+        <welcome-file>views/pict-api/pict.html</welcome-file>
+        <welcome-file>views/pict-api/pict.htm</welcome-file>
+        <welcome-file>views/pict-api/pict.jsp</welcome-file>
     </welcome-file-list>
 
+    <servlet>
+        <servlet-name>pict</servlet-name>
+        <servlet-class>servlets.PictServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>pict</servlet-name>
+        <url-pattern>/</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>imPost</servlet-name>
+        <servlet-class>servlets.ImgPostServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>imPost</servlet-name>
+        <url-pattern>/api/picture/generate/*</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>imGet</servlet-name>
+        <servlet-class>servlets.ImgGetServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>imGet</servlet-name>
+        <url-pattern>/api/picture/*</url-pattern>
+    </servlet-mapping>
 
 </web-app>

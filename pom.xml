@@ -108,6 +108,12 @@
             <version>2.3.1</version>
             <scope>provided</scope>
         </dependency>
+        <!-- https://mvnrepository.com/artifact/com.google.code.gson/gson -->
+        <dependency>
+            <groupId>com.google.code.gson</groupId>
+            <artifactId>gson</artifactId>
+            <version>2.8.5</version>
+        </dependency>
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
@@ -115,7 +121,5 @@
             <scope>test</scope>
         </dependency>
     </dependencies>
-
-
 
 </project>
