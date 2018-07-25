@@ -44,7 +44,11 @@ public class ImgGetServlet extends HttpServlet {
                 //если обрабатывается потоком
                 obj.setMessage("The image with this id is processed");
                 answer = gson.toJson(obj);
-                response.sendError(HttpServletResponse.SC_ACCEPTED , answer);
+                response.setStatus(HttpServletResponse.SC_ACCEPTED);
+                response.setContentType("application/json");
+                PrintWriter out = response.getWriter();
+                out.print(answer);
+                out.flush();
             }
             else {
                 //если не обрабатывается потоком

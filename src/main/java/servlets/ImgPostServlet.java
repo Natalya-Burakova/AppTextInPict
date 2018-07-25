@@ -48,7 +48,7 @@ public class ImgPostServlet extends HttpServlet {
                 obj.setMessage("Image with this id already exists");
                 obj.setLink(getLinkPicture(inText, request));
                 answer = gson.toJson(obj);
-                response.sendError(HttpServletResponse.SC_BAD_REQUEST, answer);
+                response.setStatus(HttpServletResponse.SC_BAD_REQUEST);
             }
             //если не существует такая картинка
             else {
@@ -57,7 +57,7 @@ public class ImgPostServlet extends HttpServlet {
                     obj.setMessage("Image with this id is processed");
                     obj.setLink(getLinkPicture(inText, request));
                     answer = gson.toJson(obj);
-                    response.sendError(HttpServletResponse.SC_ACCEPTED, answer);
+                    response.setStatus(HttpServletResponse.SC_ACCEPTED);
                 }
                 //если не существует, то отправляем новую задачу для потоков
                 else {
@@ -65,9 +65,13 @@ public class ImgPostServlet extends HttpServlet {
                     threadPool.addTask(task, inText);
                     obj.setLink(getLinkPicture(inText, request));
                     answer = gson.toJson(obj);
-                    response.sendError(HttpServletResponse.SC_OK, answer);
+                    response.setStatus(HttpServletResponse.SC_OK);
                 }
             }
+            response.setContentType("application/json");
+            PrintWriter out = response.getWriter();
+            out.print(answer);
+            out.flush();
         }
         //если запрос некорректный
         else {
