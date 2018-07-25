@@ -75,7 +75,6 @@ public class ImgPostServlet extends HttpServlet {
         }
         //если запрос некорректный
         else {
-
             obj.setMessage("The request must be in the following format: {\"text\": \"*text*\" }");
             answer = gson.toJson(obj);
             response.sendError(HttpServletResponse.SC_NOT_FOUND, answer);
