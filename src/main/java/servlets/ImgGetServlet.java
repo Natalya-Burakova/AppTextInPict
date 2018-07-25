@@ -39,8 +39,7 @@ public class ImgGetServlet extends HttpServlet {
             response.getOutputStream().write(imageBytes);//
         }
         else {
-            //если картинка не найдена, проверяес состояние
-
+            //если картинка не найдена, проверяется состояние
             if (ImgPostServlet.isAliveThread(inText)) {
                 //если обрабатывается потоком
                 obj.setMessage("The image with this id is processed");
