@@ -8,15 +8,15 @@ public class Analysis {
 
     public static String analysis(String jsonLine) {
         Gson gson = new Gson();
-        String expression;
+        String text;
         try {
-            expression = gson.fromJson(jsonLine, JsonObject.class).getAsJsonObject().get("text").getAsString();
+            text = gson.fromJson(jsonLine, JsonObject.class).getAsJsonObject().get("text").getAsString();
         }
 
         catch (Exception e) {
             return null;
         }
 
-        return expression;
+        return text;
     }
 }
