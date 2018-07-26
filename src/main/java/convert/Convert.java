@@ -23,7 +23,7 @@ public class Convert {
     public static String getPathPict(String text) {
         String relativePathToClass = Convert.class.getName().replace('.', '/') + ".class";
         URL url = Convert.class.getClassLoader().getResource(relativePathToClass);
-        String pathToRoot = url.getFile().substring(0, url.getFile().indexOf("target"))+ "src/main/resources/image/";
+        String pathToRoot = url.getFile().substring(0, url.getFile().indexOf("target"))+ "src"+File.separator+"main"+File.separator+"resources"+File.separator+"image"+File.separator;
         String pathToDirectoryWithImage = pathToRoot + text +".png";
         return pathToDirectoryWithImage;
     }
