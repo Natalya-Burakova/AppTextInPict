@@ -3,6 +3,7 @@ package servlets;
 import javax.imageio.ImageIO;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -22,6 +23,9 @@ import thread.ThreadPool;
 import valid.Validator;
 import parse.Analysis;
 
+
+
+@WebServlet(name = "imGet", urlPatterns = {"/api/picture/*"})
 public class ImgGetServlet extends HttpServlet {
     @Override
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {

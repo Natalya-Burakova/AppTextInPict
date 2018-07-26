@@ -27,7 +27,7 @@ public class Convert {
         String pathToDirectoryWithImage = pathToRoot + text +".png";
         return pathToDirectoryWithImage;
     }
-
+//
     //функция которая рисует текст на белом фоне
     private static BufferedImage convert(String text) {
         int width = (text.length() + 1) * 28;
