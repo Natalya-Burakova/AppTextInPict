@@ -1,5 +1,7 @@
 package convert;
 
+import pict.Picture;
+
 import javax.imageio.ImageIO;
 import java.awt.*;
 import java.awt.image.BufferedImage;
@@ -9,11 +11,11 @@ import java.net.URL;
 
 public class Convert {
 
-    //функци, которая делает из текста картинку
-    public static void convertTextInPict(String text) {
-        String pathToDirectoryWithImage = getPathPict(text);
+    //функция, которая делает из текста картинку
+    public static void convertTextInPict(Picture picture) {
+        String pathToDirectoryWithImage = getPathPict(picture.getText());
         try {
-            ImageIO.write(convert(text), "png", new File(pathToDirectoryWithImage));
+            ImageIO.write(convert(picture.getText()), "png", new File(pathToDirectoryWithImage));
         } catch (IOException ex) {
             System.exit(-1);
         }
@@ -27,7 +29,7 @@ public class Convert {
         String pathToDirectoryWithImage = pathToRoot + text +".png";
         return pathToDirectoryWithImage;
     }
-//
+
     //функция которая рисует текст на белом фоне
     private static BufferedImage convert(String text) {
         int width = (text.length() + 1) * 28;

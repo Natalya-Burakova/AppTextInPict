@@ -4,6 +4,7 @@ package json;
 import java.net.MalformedURLException;
 import java.net.URL;
 
+
 public class JSONObject {
     private String message;
     private URL link;

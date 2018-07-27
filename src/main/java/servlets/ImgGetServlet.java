@@ -35,12 +35,20 @@ public class ImgGetServlet extends HttpServlet {
         JSONObject obj = new JSONObject();//объект для формирования сообщения в формате json
         String answer = "";
 
+
+        for (int i = 0; i<ImgPostServlet.spisokPicture.size(); i++) {
+            if (ImgPostServlet.spisokPicture.get(i).getId().equals(inText)) {
+                inText = ImgPostServlet.spisokPicture.get(i).getText();
+            }
+        }
+
         if (ImgPostServlet.existFile(inText)) {
             //отображаем картинку
             byte[] imageBytes = pictToMasByte(inText);
             response.setContentType("image/png");
             response.setContentLength(imageBytes.length); // imageBytes - image in bytes
             response.getOutputStream().write(imageBytes);//
+
         }
         else {
             //если картинка не найдена, проверяется состояние
@@ -48,7 +56,6 @@ public class ImgGetServlet extends HttpServlet {
                 //если обрабатывается потоком
                 obj.setMessage("The image with this id is processed");
                 answer = gson.toJson(obj);
-                response.setStatus(HttpServletResponse.SC_ACCEPTED);
                 response.setContentType("application/json");
                 PrintWriter out = response.getWriter();
                 out.print(answer);
@@ -74,5 +81,7 @@ public class ImgGetServlet extends HttpServlet {
         baos.close();
         return Base64.decode(base64String);
     }
+
+
 
 }

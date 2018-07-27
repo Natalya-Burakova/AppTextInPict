@@ -8,7 +8,6 @@
         <welcome-file>views/pict-api/pict.htm</welcome-file>
         <welcome-file>views/pict-api/pict.jsp</welcome-file>
     </welcome-file-list>
-
     <servlet>
         <servlet-name>pict</servlet-name>
         <servlet-class>servlets.PictServlet</servlet-class>
@@ -38,5 +37,4 @@
         <servlet-name>imGet</servlet-name>
         <url-pattern>/api/picture/*</url-pattern>
     </servlet-mapping>
-
 </web-app>
