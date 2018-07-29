@@ -12,11 +12,9 @@ public class Analysis {
         try {
             text = gson.fromJson(jsonLine, JsonObject.class).getAsJsonObject().get("text").getAsString();
         }
-
         catch (Exception e) {
             return null;
         }
-
         return text;
     }
 }

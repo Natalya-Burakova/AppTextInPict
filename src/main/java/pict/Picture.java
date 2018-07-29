@@ -35,6 +35,4 @@ public class Picture {
         return task;
     }
 
-
-
 }

@@ -11,9 +11,8 @@ public class AnnotationAnalysis {
         try {
             field = threadPool.getClass().getDeclaredField("numberThread");
             field.setAccessible(true);
-            if (field.isAnnotationPresent(ThreadAnnotation.class)) {
+            if (field.isAnnotationPresent(ThreadAnnotation.class))
                 field.setInt(threadPool, field.getAnnotation(ThreadAnnotation.class).numberThread());
-            }
         } catch (NoSuchFieldException e) {
             System.exit(-1);
         } catch (IllegalAccessException e) {

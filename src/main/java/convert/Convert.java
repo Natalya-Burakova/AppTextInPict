@@ -16,9 +16,7 @@ public class Convert {
         String pathToDirectoryWithImage = getPathPict(picture.getText());
         try {
             ImageIO.write(convert(picture.getText()), "png", new File(pathToDirectoryWithImage));
-        } catch (IOException ex) {
-            System.exit(-1);
-        }
+        } catch (IOException ex) { System.exit(-1); }
     }
 
     //функция которая формирует путь к картинке
@@ -44,7 +42,6 @@ public class Convert {
         g.setColor(Color.black);
         g.drawString(text, 28, 28);
         g.dispose();
-
         return bi;
     }
 

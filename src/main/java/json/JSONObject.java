@@ -6,6 +6,7 @@ import java.net.URL;
 
 
 public class JSONObject {
+
     private String message;
     private URL link;
 
@@ -22,7 +23,7 @@ public class JSONObject {
     public void setLink(String link) {
         try {
             this.link = new URL(link);
-        } catch (MalformedURLException e) { }
+        } catch (MalformedURLException e) { System.exit(-1);}
     }
 
     public URL getLink(){

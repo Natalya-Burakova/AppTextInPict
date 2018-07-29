@@ -29,9 +29,8 @@ public class ImgGetServlet extends HttpServlet {
 
 
         for (int i = 0; i<ImgPostServlet.spisokPicture.size(); i++) {
-            if (ImgPostServlet.spisokPicture.get(i).getId().equals(inText)) {
+            if (ImgPostServlet.spisokPicture.get(i).getId().equals(inText))
                 inText = ImgPostServlet.spisokPicture.get(i).getText();
-            }
         }
 
         if (ImgPostServlet.existFile(inText)) {
@@ -40,7 +39,6 @@ public class ImgGetServlet extends HttpServlet {
             response.setContentType("image/png");
             response.setContentLength(imageBytes.length); // imageBytes - image in bytes
             response.getOutputStream().write(imageBytes);//
-
         }
         else {
             //если картинка не найдена, проверяется состояние
@@ -73,7 +71,5 @@ public class ImgGetServlet extends HttpServlet {
         baos.close();
         return Base64.decode(base64String);
     }
-
-
 
 }
