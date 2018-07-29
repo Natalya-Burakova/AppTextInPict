@@ -1,4 +1,4 @@
-package parse;
+package json;
 
 import com.google.gson.Gson;
 import com.google.gson.JsonArray;

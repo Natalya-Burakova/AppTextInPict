@@ -22,9 +22,7 @@ public class JSONObject {
     public void setLink(String link) {
         try {
             this.link = new URL(link);
-        } catch (MalformedURLException e) {
-            System.exit(-1);
-        }
+        } catch (MalformedURLException e) { }
     }
 
     public URL getLink(){

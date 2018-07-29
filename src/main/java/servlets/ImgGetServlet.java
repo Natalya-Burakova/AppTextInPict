@@ -1,7 +1,6 @@
 package servlets;
 
 import javax.imageio.ImageIO;
-import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -9,20 +8,13 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.awt.image.BufferedImage;
 import java.io.*;
-import java.util.ArrayList;
-import java.util.Vector;
+
 import com.sun.org.apache.xerces.internal.impl.dv.util.Base64;
 
 import convert.Convert;
-import annotation.AnnotationAnalysis;
 import json.JSONObject;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
-import org.graalvm.compiler.core.GraalCompiler;
-import thread.ThreadPool;
-import valid.Validator;
-import parse.Analysis;
-
 
 
 @WebServlet(name = "imGet", urlPatterns = {"/api/picture/*"})

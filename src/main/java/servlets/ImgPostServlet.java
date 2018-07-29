@@ -1,16 +1,13 @@
 package servlets;
 
-import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
-import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.File;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.util.ArrayList;
 import java.util.Vector;
 
 import convert.Convert;
@@ -18,13 +15,10 @@ import annotation.AnnotationAnalysis;
 import json.JSONObject;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
-import org.graalvm.compiler.core.GraalCompiler;
 import pict.Picture;
 import thread.ThreadPool;
-import valid.Validator;
-import parse.Analysis;
-
-import  java.util.UUID;
+import json.Validator;
+import json.Analysis;
 
 @WebServlet(name = "imPost", urlPatterns = {"/api/picture/generate/*"})
 public class ImgPostServlet extends HttpServlet {

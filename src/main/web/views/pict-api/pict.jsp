@@ -1,4 +1,4 @@
-<%@ page import="parse.Analysis" %>
+<%@ page import="json.Analysis" %>
 <%@ page import="java.util.UUID" %><%--
   Created by IntelliJ IDEA.
   User: macbooknatalya
