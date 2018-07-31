@@ -11,7 +11,7 @@ import org.apache.catalina.webresources.StandardRoot;
 public class Main {
 
     public static void main(String[] args) throws Exception {
-        float a =0x81;
+        float a = 0x81;
 
         String webappDirLocation = "resources";
         Tomcat tomcat = new Tomcat();
@@ -28,8 +28,7 @@ public class Main {
 
         File additionWebInfClasses = new File("classes");
         WebResourceRoot resources = new StandardRoot(ctx);
-        resources.addPreResources(new DirResourceSet(resources, "/WEB-INF/classes",
-                additionWebInfClasses.getAbsolutePath(), "/"));
+        resources.addPreResources(new DirResourceSet(resources, "/WEB-INF/classes", additionWebInfClasses.getAbsolutePath(), "/"));
         ctx.setResources(resources);
 
         tomcat.start();
