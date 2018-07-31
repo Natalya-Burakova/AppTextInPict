@@ -21,7 +21,7 @@
         <finalName>text-in-pict</finalName>
         <resources>
             <resource>
-                <directory>src/main/web</directory>
+                <directory>${project.basedir}/src/main/web</directory>
             </resource>
         </resources>
         <plugins>
@@ -44,8 +44,33 @@
                             <classpathPrefix>lib</classpathPrefix>
                             <mainClass>launch.Main</mainClass>
                         </manifest>
+                        <manifestEntries>
+                            <Class-Path>/src/main/web</Class-Path>
+                        </manifestEntries>
                     </archive>
                 </configuration>
+            </plugin>
+            <plugin>
+                <artifactId>maven-resources-plugin</artifactId>
+                <version>2.6</version>
+                <executions>
+                    <execution>
+                        <id>copy-resources-1</id>
+                        <phase>validate</phase>
+                        <goals>
+                            <goal>copy-resources</goal>
+                        </goals>
+                        <configuration>
+                            <outputDirectory>${basedir}/target/resources/</outputDirectory>
+                            <resources>
+                                <resource>
+                                    <directory>src/main/web</directory>
+                                    <filtering>true</filtering>
+                                </resource>
+                            </resources>
+                        </configuration>
+                    </execution>
+                </executions>
             </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
