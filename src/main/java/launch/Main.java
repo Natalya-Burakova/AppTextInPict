@@ -13,7 +13,7 @@ public class Main {
     public static void main(String[] args) throws Exception {
         float a =0x81;
 
-        String webappDirLocation = "src/main/web/";
+        String webappDirLocation = "resources";
         Tomcat tomcat = new Tomcat();
 
         String webPort = System.getenv("PORT");
@@ -26,7 +26,7 @@ public class Main {
         StandardContext ctx = (StandardContext) tomcat.addWebapp("/", new File(webappDirLocation).getAbsolutePath());
         System.out.println("configuring app with basedir: " + new File("./" + webappDirLocation).getAbsolutePath());
 
-        File additionWebInfClasses = new File("target/classes");
+        File additionWebInfClasses = new File("classes");
         WebResourceRoot resources = new StandardRoot(ctx);
         resources.addPreResources(new DirResourceSet(resources, "/WEB-INF/classes",
                 additionWebInfClasses.getAbsolutePath(), "/"));
