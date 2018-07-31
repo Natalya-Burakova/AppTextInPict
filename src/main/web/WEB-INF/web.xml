@@ -8,15 +8,6 @@
         <welcome-file>views/pict-api/pict.htm</welcome-file>
         <welcome-file>views/pict-api/pict.jsp</welcome-file>
     </welcome-file-list>
-    <servlet>
-        <servlet-name>pict</servlet-name>
-        <servlet-class>servlets.PictServlet</servlet-class>
-    </servlet>
-
-    <servlet-mapping>
-        <servlet-name>pict</servlet-name>
-        <url-pattern>/</url-pattern>
-    </servlet-mapping>
 
     <servlet>
         <servlet-name>imPost</servlet-name>

@@ -11,6 +11,7 @@ import org.apache.catalina.webresources.StandardRoot;
 public class Main {
 
     public static void main(String[] args) throws Exception {
+        float a =0x81;
 
         String webappDirLocation = "src/main/web/";
         Tomcat tomcat = new Tomcat();
